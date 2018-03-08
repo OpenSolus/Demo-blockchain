@@ -2,20 +2,20 @@
   form.form-horizontal
 
     .form-group
-      label.col-sm-2.control-label(for='block#{block.block}chain#{block.chain}number') #{__('Block')}:
-      .col-sm-10
+      label.col-sm-3.control-label(for='block#{block.block}chain#{block.chain}number') #{__('Block')}
+      .col-sm-9
         .input-group
           span.input-group-addon #
           input.form-control(id='block#{block.block}chain#{block.chain}number', type='text', value='#{block.block}' onkeyup='updateChain(#{block.block}, #{block.chain});')
 
     .form-group
-      label.col-sm-2.control-label(for='block#{block.block}chain#{block.chain}nonce') #{__('Nonce')}:
-      .col-sm-10
+      label.col-sm-3.control-label(for='block#{block.block}chain#{block.chain}nonce') #{__('Nonce')}
+      .col-sm-9
          input.form-control(id='block#{block.block}chain#{block.chain}nonce', type='text', value='#{block.nonce}', onkeyup='updateChain(#{block.block}, #{block.chain});')
 
     .form-group
-      label.col-sm-2.control-label #{__('Tx')}:
-      .col-sm-10
+      label.col-sm-3.control-label #{__('Tx')}
+      .col-sm-9
         - each tx, x in block.txs
           .input-group
             .input-group-addon #{__('$')}
@@ -26,18 +26,18 @@
             input.form-control(id='block#{block.block}chain#{block.chain}tx#{x}to', type='text', value='#{tx.to}', onkeyup='updateChain(#{block.block}, #{block.chain});')
 
     #state.form-group
-      label.col-sm-2.control-label(for='block#{block.block}chain#{block.chain}previous') #{__('Prev')}:
-      .col-sm-10
+      label.col-sm-3.control-label(for='block#{block.block}chain#{block.chain}previous') #{__('Prev')}
+      .col-sm-9
         input.form-control(id='block#{block.block}chain#{block.chain}previous', type='text', value='#{block.previous}')
 
     #state.form-group
-      label.col-sm-2.control-label(for='block#{block.block}chain#{block.chain}hash') #{__('Hash')}:
-      .col-sm-10
+      label.col-sm-3.control-label(for='block#{block.block}chain#{block.chain}hash') #{__('Hash')}
+      .col-sm-9
         input.form-control(id='block#{block.block}chain#{block.chain}hash', type='text' disabled)
 
     .form-group
-      .col-sm-2
+      .col-sm-3
         i.icon-spinner.icon-spin.icon-large
-      .col-sm-10
+      .col-sm-9
         button.btn.btn-primary.ladda-button(id='block#{block.block}chain#{block.chain}mineButton', data-style='expand-right')
           span.ladda-label #{__('Mine')}
